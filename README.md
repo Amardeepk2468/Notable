@@ -19,23 +19,9 @@ Before you begin, ensure you have met the following requirements:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/atanu3000/MERN_Notes_App.git
+   git clone https://github.com/Amardeepk2468/Notable/tree/main
    ```
-2. Navigate to the repository
 
-    ```bash
-    cd MERN_Notes_App
-    ```
-3. Install server dependencies
-    ```bash
-    cd server
-    npm i
-    ```
-4. Install frontend dependencies
-    ```bash
-    cd ../frontend
-    npm i
-    ```
 ## Usage
 
 1. Setup your MongoDB connection by creating the `.env` file in your `server` directory with your MongoDB URL
