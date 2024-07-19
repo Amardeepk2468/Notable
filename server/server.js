@@ -23,7 +23,7 @@ mongoose
   .catch((error) => console.log(error));
 
 // Middlewares
-app.use(express.json()); // JSON Parser
+app.use(express.json());    // JSON Parser
 app.use(express.urlencoded({ extended: true })); // URL Body Parser
 
 // CORS
