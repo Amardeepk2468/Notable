@@ -11,7 +11,7 @@ export default function EditForm() {
     });
     useEffect(() => {
         axios
-            .get(`http://localhost:3000/noteDetails/${id}`)
+            .get(`${import.meta.env.VITE_BACKEND_URL}/noteDetails/${id}`)
             .then((res) => {
                 setNote(res.data.content);
             })
@@ -26,7 +26,7 @@ export default function EditForm() {
     const submitHandler = (event) => {
         event.preventDefault();
         axios
-            .patch(`http://localhost:3000/updateNote/${id}`, note)
+            .patch(`${import.meta.env.VITE_BACKEND_URL}/updateNote/${id}`, note)
             .then(() => {
                 navigate(`/details/${id}`);
                 Swal.fire('Your note has been updated successfully!')

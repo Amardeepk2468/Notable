@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import  { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import 'animate.css/animate.min.css';
@@ -19,7 +19,7 @@ export default function AddForm() {
     const submitHandler = (event) => {
       event.preventDefault();
       axios
-        .post(`http://localhost:3000/addNote`, note)
+        .post(`${import.meta.env.VITE_BACKEND_URL}/addNote`, note)
         .then(() => {
           navigate('/');
           Swal.fire({

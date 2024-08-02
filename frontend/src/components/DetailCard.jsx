@@ -1,7 +1,7 @@
 import axios from "axios";
-import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import PropTypes from "prop-types";
 
 export default function DetailCard({ note }) {
     const btnStyle = {
@@ -28,7 +28,7 @@ export default function DetailCard({ note }) {
         }).then((result) => {
             if (result.isConfirmed) {
                 axios
-                    .delete(`http://localhost:3000/deleteNote/${note._id}`)
+                    .delete(`${import.meta.env.VITE_BACKEND_URL}/deleteNote/${note._id}`)
                     .then(() => {
                         navigate("/");
                         Swal.fire(
@@ -59,3 +59,12 @@ export default function DetailCard({ note }) {
         </div>
     );
 }
+
+// Prop validation
+DetailCard.propTypes = {
+    note: PropTypes.shape({
+        _id: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        details: PropTypes.string.isRequired,
+    }).isRequired,
+};

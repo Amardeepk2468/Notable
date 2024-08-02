@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import AddNote from "../components/AddNote";
 import NoteCard from "../components/NoteCard";
 import axios from "axios";
@@ -17,7 +17,7 @@ export default function Home() {
     useEffect(() => {
         const fetchNotes = () => {
             axios
-                .get("http://localhost:3000/allNotes")
+                .get(`${import.meta.env.VITE_BACKEND_URL}/allNotes`)
                 .then((res) => {
                     if (res.data.content) {
                         setNotes(res.data.content);

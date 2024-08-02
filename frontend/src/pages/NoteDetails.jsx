@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import DetailCard from "../components/DetailCard";
 
@@ -12,7 +12,7 @@ export default function NoteDetails() {
     });
     useEffect(() => {
         axios
-            .get(`http://localhost:3000/noteDetails/${id}`)
+            .get(`${import.meta.env.VITE_BACKEND_URL}/noteDetails/${id}`)
             .then((res) => {
                 setNote(res.data.content);
             })
