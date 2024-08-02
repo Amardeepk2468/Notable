@@ -29,7 +29,7 @@ app.use(express.urlencoded({ extended: true })); // URL Body Parser
 // CORS
 app.use(
   cors({
-    origin: "*",
+    origin: "https://notable-six.vercel.app",
     // credentials: true,
   })
 );
